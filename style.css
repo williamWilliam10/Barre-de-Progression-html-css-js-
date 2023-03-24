@@ -1,13 +1,18 @@
 *{
+    
     box-sizing: border-box; /*limite la largeur et la hauteur au bordure de la boite*/
+}
+body{
+    background-color: #f6f7fb;
 }
 
 
 /*Dans le root je definir quelque variable css que je vais utilisé*/
 :root{
-    --step-color-active:#068add;
+    --step-color-active:#3498db;
     --step-color-disabled:#e0e0e0;
 }
+
 
 
 .container{
@@ -28,8 +33,8 @@
     justify-content:space-between;/*les element sont sepraré avec les espace entre eux de maniere relatif*/
     position: relative;
     max-width: 100%;
-    width: 250px;
-    margin: 15px 0;
+    width: 350px;
+    margin: 30px;
 }
 
 .progress-steps-container .step-number{
@@ -45,25 +50,27 @@
     align-items: center;
     background: #fff;
     z-index: 1;/* pour m'assure que mes bulle sont au dessus de la barre de progression*/
-    transition: border 0.4s ease-in;
+    transition: border  0.4s ease-in;
     cursor: pointer;
+    color: #999;
+
 }
 
-.step-number .active{
+.step-number:active{
     border: 3px solid var(--step-color-active);
-    color: var(--step-color-active);
-    
 }
 .progress-steps-container::before{
     position: absolute;
     content: "";
     width: 100%;
-    height: 3px;
+    height: 4px;
     top: 50%;
     left: 0;
     transform: translate(0, -50%);
     background-color: var(--step-color-disabled);
      z-index: -1;
+   
+
 }
 
 .step-progression{
@@ -74,7 +81,24 @@
     left: 0;
     transform: translate(0, -50%);
     background-color: var(--step-color-active);
-    transition: width 0.4s ease-in;
+    transition:  0.4s ease-in;
     z-index: 1;
+    
+
 
 }
+.btn {
+    background-color: var(--step-color-active);
+    color: #fff;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 8px 30px;
+    margin: 5px;
+    font-size: 14px;
+  }
+  .btn:disabled {
+    background-color: var(--step-color-disabled);
+    cursor: not-allowed;
+  }

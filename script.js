@@ -14,12 +14,25 @@ stepNumbers.forEach((step, i)=>{
  }
 });
 
-
+prevBtn.onclick =() => {
+    currentStep--;
+    update();
+};
+nextBtn.onclick =() => {
+    currentStep++;
+    update();
+};
 
 function update(){
     prevBtn.disabled= false;
     nextBtn.disabled=false;
-
+    if(currentStep<= 1){
+        currentStep= 1;
+        prevBtn.disabled= true;
+    } else if(currentStep >= stepNumbers.length){
+        currentStep=stepNumbers.length;
+        nextBtn.disabled= true
+    }
 
     stepNumbers.forEach((step, i)=>{
       if(currentStep => i){
