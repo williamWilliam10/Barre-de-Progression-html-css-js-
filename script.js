@@ -35,8 +35,9 @@ function update(){
         nextBtn.disabled= true
     }
 
+      
     stepNumbers.forEach((step, i)=>{
-      if(currentStep => i){
+      if(currentStep >= i+1){
         step.classList.add("active");
       }  else{
         step.classList.remove("active");
