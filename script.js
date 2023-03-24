@@ -14,6 +14,7 @@ stepNumbers.forEach((step, i)=>{
  }
 });
 
+
 prevBtn.onclick =() => {
     currentStep--;
     update();

@@ -2,6 +2,7 @@
     
     box-sizing: border-box; /*limite la largeur et la hauteur au bordure de la boite*/
 }
+
 body{
     background-color: #f6f7fb;
 }
@@ -12,8 +13,6 @@ body{
     --step-color-active:#3498db;
     --step-color-disabled:#e0e0e0;
 }
-
-
 
 .container{
     display: flex;
@@ -36,6 +35,9 @@ body{
     width: 350px;
     margin: 30px;
 }
+.step-number{
+    border: 3px solid var(--step-color-active);
+}
 
 .progress-steps-container .step-number{
 
@@ -56,9 +58,7 @@ body{
 
 }
 
-.step-number:active{
-    border: 3px solid var(--step-color-active);
-}
+
 .progress-steps-container::before{
     position: absolute;
     content: "";
@@ -70,7 +70,6 @@ body{
     background-color: var(--step-color-disabled);
      z-index: -1;
    
-
 }
 
 .step-progression{
@@ -82,9 +81,7 @@ body{
     transform: translate(0, -50%);
     background-color: var(--step-color-active);
     transition:  0.4s ease-in;
-    z-index: 1;
-    
-
+    z-index: -1;
 
 }
 .btn {
